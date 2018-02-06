@@ -15,10 +15,10 @@ class CreatePasswordResetsTable extends Migration
     {
         Schema::create('password_resets', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-//            $table->string('email')->unsigned();
+            $table->string('email');
 //            $table->foreign('email')->references('email_users')->on('users');
             $table->string('token');
-            $table->timestamp('created_at')->nullable();
+            $table->timestamp('created_at');
         });
     }
 

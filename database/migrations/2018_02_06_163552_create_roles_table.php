@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePaymentTable extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreatePaymentTable extends Migration
      */
     public function up()
     {
-        Schema::create('payment', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->increments('id_payment');
-            $table->string('paymentType');
-            $table->string('paymentStatus');
+        Schema::create('roles', function (Blueprint $table) {
+            $table->increments('id_role');
+            $table->string('type_role');
         });
     }
 
@@ -28,6 +26,6 @@ class CreatePaymentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('payment');
+        Schema::dropIfExists('roles');
     }
 }

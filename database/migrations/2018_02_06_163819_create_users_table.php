@@ -21,12 +21,12 @@ class CreateUsersTable extends Migration
             $table->string('email_users')->unique();
             $table->string('password_users');
             $table->string('phone_users');
-//            $table->integer('id_bill')->unsigned();
-//            $table->foreign('id_bill')->references('id_bill')->on('billing');
-//            $table->integer('id_ship')->unsigned();
-//            $table->foreign('id_ship')->references('id_ship')->on('shipping');
-//            $table->integer('id_role')->unsigned();
-//            $table->foreign('id_role')->references('id_role')->on('roles');
+            $table->integer('id_bill')->unsigned();
+            $table->foreign('id_bill')->references('id_bill')->on('billing');
+            $table->integer('id_ship')->unsigned();
+            $table->foreign('id_ship')->references('id_ship')->on('shipping');
+            $table->integer('id_role')->unsigned();
+            $table->foreign('id_role')->references('id_role')->on('roles');
             $table->rememberToken();
             $table->timestamps();
         });

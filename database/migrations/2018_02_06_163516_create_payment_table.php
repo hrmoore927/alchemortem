@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRolesTable extends Migration
+class CreatePaymentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateRolesTable extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
-            $table->increments('roleID');
-            $table->string('roleType');
+        Schema::create('payment', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->increments('id_payment');
+            $table->string('type_payment');
+            $table->string('status_payment');
         });
     }
 
@@ -26,6 +28,6 @@ class CreateRolesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('payment');
     }
 }

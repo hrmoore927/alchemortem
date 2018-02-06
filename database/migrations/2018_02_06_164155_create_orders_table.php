@@ -20,10 +20,10 @@ class CreateOrdersTable extends Migration
             $table->date('orderDate');
             $table->date('shipDate');
             $table->string('orderStatus');
-//            $table->integer('id_users')->unsigned();
-//            $table->foreign('id_users')->references('id_users')->on('users');
-//            $table->integer('id_payment')->unsigned();
-//            $table->foreign('id_payment')->references('id_payment')->on('payment');
+            $table->integer('id_users')->unsigned();
+            $table->foreign('id_users')->references('id_users')->on('users');
+            $table->integer('id_payment')->unsigned();
+            $table->foreign('id_payment')->references('id_payment')->on('payment');
         });
     }
 
