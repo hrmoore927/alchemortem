@@ -14,12 +14,13 @@ class CreateBillingTable extends Migration
     public function up()
     {
         Schema::create('billing', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('billAddress1');
-            $table->string('billAddress2');
-            $table->string('billCity');
-            $table->string('billState');
-            $table->string('billZip');
+            $table->engine = 'InnoDB';
+            $table->increments('id_bill');
+            $table->string('address1_bill');
+            $table->string('address2_bill');
+            $table->string('city_bill');
+            $table->string('state_bill');
+            $table->string('zip_bill');
         });
     }
 

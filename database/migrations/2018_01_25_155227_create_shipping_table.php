@@ -14,12 +14,13 @@ class CreateShippingTable extends Migration
     public function up()
     {
         Schema::create('shipping', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('shipAddress1');
-            $table->string('shipAddress2');
-            $table->string('shipCity');
-            $table->string('shipState');
-            $table->string('shipZip');
+            $table->engine = 'InnoDB';
+            $table->increments('id_ship');
+            $table->string('address1_ship');
+            $table->string('address2_ship');
+            $table->string('city_ship');
+            $table->string('state_ship');
+            $table->string('zip_ship');
         });
     }
 

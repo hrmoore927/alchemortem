@@ -14,17 +14,16 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('userID');
-            $table->integer('productID');
-            $table->integer('quantity');
+            $table->engine = 'InnoDB';
+            $table->increments('id_order');
             $table->integer('total');
-            $table->integer('paymentID');
-            $table->integer('billID');
-            $table->integer('shipID');
-            $table->string('orderDate');
-            $table->string('shipDate');
+            $table->date('orderDate');
+            $table->date('shipDate');
             $table->string('orderStatus');
+//            $table->integer('id_users')->unsigned();
+//            $table->foreign('id_users')->references('id_users')->on('users');
+//            $table->integer('id_payment')->unsigned();
+//            $table->foreign('id_payment')->references('id_payment')->on('payment');
         });
     }
 

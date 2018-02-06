@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOrderStatusTable extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateOrderStatusTable extends Migration
      */
     public function up()
     {
-        Schema::create('order_status', function (Blueprint $table) {
-            $table->increments('statusID');
-            $table->string('status');
+        Schema::create('roles', function (Blueprint $table) {
+            $table->increments('roleID');
+            $table->string('roleType');
         });
     }
 
@@ -26,6 +26,6 @@ class CreateOrderStatusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('order_status');
+        Schema::dropIfExists('roles');
     }
 }
